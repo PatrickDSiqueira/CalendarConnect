@@ -50,8 +50,6 @@ export default class GoogleAuthService {
             headers: {Authorization: `Bearer ${accessToken}`}
         });
 
-        let user = await UserRepository.findOrCreateByEmail(profileResponse.data);
-
-        return JWTService.generateJwtToken(user, `Bearer ${accessToken}`)
+        return JWTService.generateJwtToken(profileResponse.data, `Bearer ${accessToken}`)
     }
 }

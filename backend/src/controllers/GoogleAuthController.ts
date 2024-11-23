@@ -32,7 +32,9 @@ class GoogleAuthController extends BaseResponse {
 
             const data = await this.googleAuthService.processGoogleOAuth2(code);
 
-            return this.responseSuccess(res, data);
+            res.cookie('calendar_connect', data);
+
+            return this.responseRedirect(res);
 
         } catch (error: Error) {
 

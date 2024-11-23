@@ -1,4 +1,5 @@
 import express from "express";
+import config from "../../config";
 
 export default class {
 
@@ -18,5 +19,10 @@ export default class {
 
         return response.status(401)
             .json({ok: false, error: "Unauthorized"});
+    }
+
+    public responseRedirect(response): express.Response {
+
+        return response.redirect(config.frontendURL);
     }
 }

@@ -2,11 +2,8 @@ import express from "express";
 import consign from "consign";
 import cors from "cors";
 import config from "../config";
-import sequelize from "./database/db-connection";
 
 const app = express();
-
-(async () => await sequelize.sync())();
 
 app.use(express.json());
 

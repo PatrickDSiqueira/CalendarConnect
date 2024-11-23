@@ -8,13 +8,7 @@ const config = {
     port: parseInt(process.env.PORT || "3000"),
     secret: process.env.SECRET,
     expireJwt: process.env.EXPIRE_JWT,
-    getDataBaseConfig: () => ({
-        database: process.env.DB_NAME,
-        username: process.env.DB_USERNAME,
-        password: process.env.DB_PASSWORD,
-        host: process.env.DB_HOST,
-        port: parseInt(process.env.DB_PORT || "3306"),
-    }),
+    frontendURL: process.env.FRONT_END_URL,
 }
 
 export default config;
